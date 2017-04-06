@@ -5,7 +5,7 @@ backend default {
 }
 sub vcl_recv {
 unset req.http.Accept-Encoding;
- # what files to cache (lookup) - just add if needed
+ ## what files to cache (lookup) - just add if needed
   if (req.url ~ "(?i)\.(jpeg|jpg|png|gif|ico|webp|js|css|txt|pdf|gz|zip|lzma|bz2|tgz|tbz|html|htm)$" || req.url ~ "^/hh/img/") {
       return(lookup);
   }
